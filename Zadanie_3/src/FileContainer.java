@@ -16,8 +16,8 @@ public class FileContainer implements Serializable{
 
     public FileContainer(String filePath) {
         srcFilePath = filePath;
-        fileName = filePath.substring(filePath.lastIndexOf("\\") + 1, filePath.length());
-        destDir = filePath.substring(0, filePath.lastIndexOf("\\") + 1);
+        fileName = filePath.substring(filePath.lastIndexOf(File.separator) + 1, filePath.length());
+        destDir = filePath.substring(0, filePath.lastIndexOf(File.separator) + 1);
         originalFileName = fileName;
         writeFileData(srcFilePath);
     }
