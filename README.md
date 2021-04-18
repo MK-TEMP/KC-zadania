@@ -34,8 +34,10 @@ Zaimplementuj funkcję addMessage() z klasy UpdateCenter, której zadaniem jest 
 public void addMessage(ArrayList<Integer> ids, String messagePath){}
 ```
 - Zadanie polega na dodaniu zmiennej 'messagePath' do HashMapy 'messages', której kluczami mają być elementy ArrayList 'ids'.
-- UWAGA: Jeżeli klucz HashMapy 'messagges' istnieje, to należy do wartości tego klucza (którą jest ArrayList) dodać zmienną 'messagePath'.
-Sposób testowania:
+- UWAGA: Jeżeli klucz HashMapy 'messagges' istnieje, to należy do wartości tego klucza (którą jest ArrayList) dodać zmienną 'messagePath'. 
+
+
+ **Sposób testowania**\:
 - Uruchom klase Server
 - Uruchom klase LoginGUI
 - Kliknij przycisk 'Sign up' -> utworzą się dwaj użytkownicy:
@@ -47,7 +49,7 @@ Sposób testowania:
 
 # Zadanie 5 - Elementy realizacji GUI
 W klasie newMainPanel zostało utworzonych kilka czatów. Wykonaj następujące działania:
-- Po naciśnięciu przycisku 'Render it !' W Jlist powinna wyświetlić się lista utworzonych czatów wraz z ich avatarami. Wykorzystaj klasę ChatRenderer do wyświetlania avatarów.
+- Po naciśnięciu przycisku 'Render it !' w Jlist powinna wyświetlić się lista utworzonych czatów wraz z ich avatarami. Wykorzystaj klasę ChatRenderer do wyświetlania avatarów.
 - Dokończ implementację przycisku 'Delete', który usunie z Jlisty wcześniej zaznaczony Chat.
 # Zadanie 6 - Bezpieczeństwo
 Zadanie polega na poprawnym uwtorzeniu SSLSocket (w klasie Client) i SSLServerSocket (klasa Server) oraz potwierdzenie tego poprawnym przesłaniem wiadomości.  
@@ -55,15 +57,16 @@ W tym celu:
 - Odszukaj w folderze /Java/bin/keytool.exe 
 - Wygeneruj klucz następującą komendą: 
 ```
-keytool -genkey -keystore yourKEYSTORE -keyalg RSA
+keytool -genkey -keystore myKEYSTORE -keyalg RSA
 ```
-- Jako hasło ustaw "password", dokończ konfigurację, wygenerowany plik umieść w folderze src
-- Dokonaj potrzebnych zmian w kodzie \
-- Sposób uruchamiania:
+- Jako hasło ustaw "veryGoodPass", dokończ konfigurację, wygenerowany plik umieść w folderze Zadanie_6/src
+- Dokonaj potrzebnych zmian w kodzie 
+
+ **Sposób testowania:**
   - Skompiluj klasy Server i Client
   - Uruchom Server następującą komendą: 
 ```
-java -Djava.protocol.handler.pkgs=com.sun.net.ssl.internal.www.protocol Server
+java Server
 ```
   - Uruchom Client następującą komendą:
 ```
