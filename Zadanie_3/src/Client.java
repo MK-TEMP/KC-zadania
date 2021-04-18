@@ -1,6 +1,5 @@
 import java.io.*;
 import java.net.Socket;
-import java.net.UnknownHostException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -9,9 +8,8 @@ public class Client {
 
     private ClientThread clientThread = null;
     private String mainDir = null;
-    private String dataBasePath = null;
-    private String host;
-    private int port;
+    private final String host;
+    private final int port;
 
     public Client(String mainDir,int port, String host){
         this.mainDir = mainDir;
@@ -37,13 +35,6 @@ public class Client {
         else System.out.println("Client.send(): 'obj' is null");
     }
 
-    public boolean transmissionIsActive(){
-        if(clientThread == null) return false;
-        if(socket == null) return false;
-        if(socket.isClosed()) return false;
-        return true;
-    }
-
     public static void main(String[] args) {
         String dir = System.getProperty("user.home") + File.separator + "ClientData";
         Client client = new Client(dir,2950,"localhost");
@@ -51,7 +42,7 @@ public class Client {
 
         // wysyłanie pliku
         String fileDir = System.getProperty("user.dir");
-        String fileName = fileDir + File.separator + "Zadanie_3" + File.separator + "src" + File.separator + "image.png";
+        String fileName = fileDir + File.separator + "src" + File.separator + "image.png";
         FileContainer fileContainer = new FileContainer(fileName);
         fileContainer.setCmd("save");
         System.out.println("Sending image.png to server ...");

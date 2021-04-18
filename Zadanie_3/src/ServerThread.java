@@ -27,11 +27,7 @@ public class ServerThread extends FileTransferManager{
                 fileContainer.setDestinationDirectory(serverDir);
 
                 // TODO ---------------
-             
-			 
-			 
-			 
-			
+
                 // --------------------
 
                 // check if file was saved successfully -------------

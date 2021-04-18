@@ -1,12 +1,8 @@
-import javax.swing.*;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Set;
+
 
 public class Functions {
-    static void save(Object object, String filepath){
+    public static void save(Object object, String filepath){
         System.out.print("Saving "+ object.getClass().getName() + " to " + filepath + " ...");
         try {
             FileOutputStream file = new FileOutputStream(filepath);
@@ -19,14 +15,14 @@ public class Functions {
         }
     }
 
-    static Object getObject(String filePath){
-        FileInputStream fileStream = null;
+    public static Object getObject(String filePath){
+        FileInputStream fileStream;
         Object object = null;
 
         try {
             fileStream = new FileInputStream(filePath);
             ObjectInputStream objStream = new ObjectInputStream(fileStream);
-            object = (Object) objStream.readObject();
+            object = objStream.readObject();
             objStream.close();
         } catch (IOException | ClassNotFoundException e) {
             System.out.println(e);

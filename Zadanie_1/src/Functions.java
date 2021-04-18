@@ -1,16 +1,17 @@
 import java.io.*;
 
 public class Functions {
-    void save(Object object, String filepath){
+    public void save(Object object, String filepath){
         System.out.print("Saving "+ object.getClass().getName() + " to " + filepath + " ...");
         try {
-
+			
+			System.out.println("Saved");
         } catch (Exception e) {
             System.out.println("In Functions.save() error occurred: "+ e.getMessage());
         }
     }
 
-    static Object getObject(String filePath){
+    public static Object getObject(String filePath){
         FileInputStream fileStream;
         Object object = null;
 

@@ -22,11 +22,7 @@ public class ClientThread extends FileTransferManager{
         switch (fileContainer.getCmd()) {
             case "getFile:true":{
                 //TODO ---------------------
-               
-			   
-			   
-			   
-			   
+
                 // -------------------------
 
                 stop();

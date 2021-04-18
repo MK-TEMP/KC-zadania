@@ -4,9 +4,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class Server extends Thread{
-    private int port;
+    private final int port;
     private boolean isEnabled = false;
-    private String mainDir;
+    private final String mainDir;
 
     public Server(int port, String mainDir) {
         this.mainDir = mainDir;
@@ -42,25 +42,21 @@ public class Server extends Thread{
         new Thread(listener).start();
     }
 
-    public static void main(String args[]){
+    public static void main(String[] args){
 
         Server server = new Server(2950,System.getProperty("user.home") + File.separator + "ServerData");
         server.startListening();
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         while (true){
-            String p = null;
+            String input = null;
             try {
-                p = reader.readLine();
+                input = reader.readLine();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            if (p.equals("x"))
+            if (input.equals("x"))
                 break;
-            if (p.equals("d"))
-                continue;
-            if (p.equals("q")){
-            }
         }
 
     }
